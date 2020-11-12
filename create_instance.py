@@ -62,7 +62,7 @@ ebs_vol = ec2.create_volume(
     )
 
 volume_id = ebs_vol['VolumeId']
-
+print(volume_id)
 # check that the EBS volume has been created successfully
 if ebs_vol['ResponseMetadata']['HTTPStatusCode'] == 200:
     print ("Successfully created Volume! " + volume_id)

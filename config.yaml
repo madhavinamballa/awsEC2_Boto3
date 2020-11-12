@@ -8,15 +8,15 @@ server:
   virtualization_type: hvm
   min_count: 1
   max_count: 1
-  KeyName: devops
+  KeyName: student
   volumes:
     - device: /dev/xvda
       size_gb: 10
-      type: ext4
+      type: gp2
       mount: /
     - device: /dev/xvdf
       size_gb: 100
-      type: xfs
+      type: gp2
       mount: /data
   users:
     - login: user1
