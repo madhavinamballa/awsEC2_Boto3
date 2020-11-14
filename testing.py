@@ -53,8 +53,8 @@ def create_and_attach_volume(ec2_client, availability_zone, DryRunFlag, device,t
         VolumeType=type,
         # DryRun=DryRunFlag
         )
-        volume_id = ebs_vol.id
-        print('***Success!! volume:', volume_id, 'created...')
+    volume_id =ebs_vol['VolumeId']
+    print('***Success!! volume:', volume_id, 'created...')
 
     except Exception as e:
         print('***Failed to create the volume...')

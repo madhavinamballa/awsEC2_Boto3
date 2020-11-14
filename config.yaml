@@ -15,7 +15,7 @@ server:
       type: gp2
       mount: /
     - device: /dev/xvdf
-      size_gb: 100
+      size_gb: 1
       type: gp2
       mount: /data
   users:
