@@ -18,7 +18,7 @@ def create_ec2(ec2,ImageId,MinCount,MaxCount,InstanceType,KeyName):
     instance_id=instance[0].id
     return instance_id, instance[0].public_ip_address
 #=============create_and_attach_volume================
-def create_and_attach_volume(ec2,device,type,size,instance_id):
+def create_and_attach_volume(ec2,device,type,size,instance_id,Availability_Zone):
     #create
     ssm_client = boto3.client('ssm')
     volume_available_waiter = ec2.get_waiter('volume_available')
@@ -26,7 +26,8 @@ def create_and_attach_volume(ec2,device,type,size,instance_id):
     try:
         ebs_vol = ec2.create_volume(
         Size=size,
-        AvailabilityZone='us-west-1b',
+        # AvailabilityZone='us-west-1b',
+        AvailabilityZone=Availability_Zone,
         VolumeType=type
         )
         volume_id =ebs_vol['VolumeId']

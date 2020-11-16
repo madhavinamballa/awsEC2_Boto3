@@ -11,6 +11,10 @@ def ssh_connect_with_retry(ssh, ip_address, retries,user):
         print('SSH into the instance: {}'.format(ip_address))
         ssh.connect(hostname=ip_address,
                     username=user, pkey=privkey)
+        stdin, stdout, stderr = ssh.exec_command("sudo mkfs -t ext4 /dev/xvdf;sudo mkdir /data;sudo mount /dev/xvdf /data;sudo adduser user1;sudo adduser user2")
+        print('stdout:', stdout.read())
+        print('stderr:', stderr.read())
+        print("added users")
         return True
     except Exception as e:
         print(e)
