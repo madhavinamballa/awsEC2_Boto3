@@ -5,4 +5,7 @@
 4) Deploy the virtual machine
 5) SSH into the instance as user1 and user2
 6) Read from and write to each of two volumes
+7) pip install  paramiko 
+
+
 
