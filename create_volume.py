@@ -148,12 +148,10 @@ ec2_client = boto3.client('ec2')
 n=len(values['server']['volumes'])
 for i in range(n):
     x=values['server']['volumes'][i]
-    li=list(x.values())
-    print(li)
     device=x['device']
     size=x['size_gb']
     type=x['type']
-    mount=x['mount']
+#     mount=x['mount']
     create_and_attach_volume(ec2_client,'us-west-1b',True,device,type,size,instance_id)
 # ssh into ec2
 ip_address = current_instance[0].public_ip_address

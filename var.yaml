@@ -1,0 +1,3 @@
+availability_zone: new-keypair.pem
+pemfile: new-keypair.pem
+KeyName: newuser

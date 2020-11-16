@@ -16,7 +16,7 @@ def create_ec2(ec2,ImageId,MinCount,MaxCount,InstanceType,KeyName):
     instance[0].reload()
     print('Instance is running, public IP: {0}'.format(instance[0].public_ip_address))
     instance_id=instance[0].id
-    return instance_id 
+    return instance_id, instance[0].public_ip_address
 #=============create_and_attach_volume================
 def create_and_attach_volume(ec2,device,type,size,instance_id):
     #create
@@ -58,16 +58,5 @@ def create_and_attach_volume(ec2,device,type,size,instance_id):
         except Exception as e:
             print('***Error - Failed to attach volume:', volume_id, 'to the instance:', instance_id)
             print(e)
-        # ssm_client.send_command(
-        #     InstanceIds=[INSTANCE_ID],
-        #     DocumentName='AWS-RunShellScript',
-        #     Parameters={
-        #         'commands': [
-        #             'echo "STARTING MOUNT SEQUENCE"'
-        #             'echo $(lsblk)'
-        #             'mkfs -t xfs /dev/xvdh',
-        #             'mkdir /data',
-        #             'mount /dev/xvdh /data'
-        #         ]
-            }
-        )
+       
+        

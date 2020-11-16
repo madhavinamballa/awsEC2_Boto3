@@ -9,9 +9,9 @@ def checkkey(keyname):
         if li[i]['KeyName'] ==keyname:
             return False
     return True
-def keyName(ec2,keyname):
+def keyName(ec2,keyname,pemfile):
     # create a file to store the key locally
-    outfile = open('ec2-keypair.pem','w')
+    outfile = open(pemfile,'w')
 
     # call the boto ec2 function to create a key pair
     key_pair = ec2.create_key_pair(KeyName=keyname)
