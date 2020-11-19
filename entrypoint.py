@@ -6,13 +6,6 @@ import time
 from create_resources import create_ec2,create_and_attach_volume
 from create_keys import checkkey,keyName
 from ssh import ssh_connect_with_retry
-
-conn_args = {
-        # 'aws_access_key_id': Your_Access_Key,
-        # 'aws_secret_access_key': Your_Secret_Key,
-        'region_name': 'us-west-1'
-    }
-# ~/.aws/credentials
 #==========config  file parsing================
 session = boto3.Session()
 credentials = session.get_credentials()
@@ -45,7 +38,10 @@ if checkkey(KeyName):
     print("creating key-pair")
     keyName(ec2,KeyName,pemfile)
 else:
+    ec2_client = boto3.client('ec2')
+    ec2_client.delete_key_pair(KeyName=KeyName)
     print("key-pair already exists")
+    keyName(ec2,KeyName,pemfile)
 print(pemfile)
 os.chmod(pemfile, 400)
 # # create ec2 instance
@@ -62,14 +58,9 @@ for i in range(n):
     type=x['type']
     mount=x['mount']
     create_and_attach_volume(ec2_client,device,type,size,instance_id,availability_zone)
-    
-# #ssh into ec2
-# ip_address = current_instance[0].public_ip_address
-# # ssh into ec2
-# ip_address = current_instance[0].public_ip_address
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-ssh_connect_with_retry(ssh,ip_address,2,'ec2-user')
+ssh_connect_with_retry(ssh,ip_address,2,'ec2-user',pemfile)
 ssh.close()

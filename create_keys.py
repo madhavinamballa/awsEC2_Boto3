@@ -10,7 +10,7 @@ def checkkey(keyname):
             return False
     return True
 def keyName(ec2,keyname,pemfile):
-    outfile = open('my_key.pem','w')
+    outfile = open('new-keypair.pem','w')
     # call the boto ec2 function to create a key pair
     key_pair = ec2.create_key_pair(KeyName=keyname)
 
