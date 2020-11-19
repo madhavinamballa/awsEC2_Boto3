@@ -15,6 +15,8 @@ Step3:  Download and install Python 3.8.3
 
 Step4:  pip install boto3, paramiko, pyyaml libraries
 
+Step4: Update var.yaml with  availability_zone:  pemfile:  KeyName: 
+
 Step5:  Run "python entrypoint.py" This will do the following
 
 Deploy the virtual machines
