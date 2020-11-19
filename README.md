@@ -13,7 +13,7 @@ Step2: update config YAML file based on configurations provide for consumption b
 
 Step3:  Download and install Python 3.8.3
 
-Step4:  pip install boto3, paramiko libraries
+Step4:  pip install boto3, paramiko, pyyaml libraries
 
 Step5:  Run "python entrypoint.py" This will do the following
 
