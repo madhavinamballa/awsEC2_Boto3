@@ -10,8 +10,12 @@ Step4:  pip install boto3, paramiko libraries
 
 Step5:  Run "python entrypoint.py" This will do the following
 
-Deploy the virtual machine
-SSH into the instance as user1 and user2
+Deploy the virtual machines
+
+SSH into the instances as user1 and user2
+
+Create the two volumes and run other steps in the configuration
+
 Read from and write to each of two volumes
  
 
