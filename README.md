@@ -1,3 +1,10 @@
+#Pre-requisties
+
+Step1: AWS Account
+
+Step2: AWS CLI
+
+Step3: Setup AWS CLI access key in the configuration
 
 # AwsEC2_Boto3
 step1: git clone https://github.com/madhavinamballa/awsEC2_Boto3.git
