@@ -1,31 +1,26 @@
-#Pre-requisties
 
-Step1: AWS Account
 
-Step2: AWS CLI
+# Pre-requisties
 
-Step3: Setup AWS CLI access key in the configuration
 
-# AwsEC2_Boto3
-step1: git clone https://github.com/madhavinamballa/awsEC2_Boto3.git
+## Step1: AWS CLI
 
-Step2: update config YAML file based on configurations provide for consumption by application
+## Step2: Setup AWS CLI access key in the configuration
 
-Step3:  Download and install Python 3.8.3
+# Installation Instructions 
 
-Step4:  pip install boto3, paramiko, pyyaml libraries
+* git clone https://github.com/madhavinamballa/awsEC2_Boto3.git
+* update config YAML file based on configurations provide for consumption by application
+* Download and install Python 3.8.3
+* pip install boto3, paramiko, pyyaml libraries
+* Update var.yaml with  availability_zone:  pemfile:  KeyName: 
 
-Step4: Update var.yaml with  availability_zone:  pemfile:  KeyName: 
+##  Run "python entrypoint.py" This will do the following
 
-Step5:  Run "python entrypoint.py" This will do the following
-
-Deploy the virtual machines
-
-SSH into the instances as user1 and user2
-
-Create the two volumes and run other steps in the configuration
-
-Read from and write to each of two volumes
+* Deploy the virtual machines
+* SSH into the instances as user1 and user2
+* Create the two volumes and run other steps in the configuration
+* Read from and write to each of two volumes
  
 
 
