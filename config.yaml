@@ -8,7 +8,6 @@ server:
   virtualization_type: hvm
   min_count: 1
   max_count: 1
-  KeyName: devops_automation
   volumes:
     - device: /dev/xvdf
       size_gb: 10
